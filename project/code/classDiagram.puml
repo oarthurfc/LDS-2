@@ -1,0 +1,101 @@
+@startuml
+abstract Class Usuario {
+    -nome: String
+    -endereco: String
+    -pedidos: List<Pedido>
+  
+    +realizarCadastro();
+    +consultarPedidos();
+}
+
+Class Cliente extends Usuario
+{
+    -cpf: String
+    -rg: String
+    -profissao: String
+    -empregadores: Lista<String>
+    -salarioTotal: Double
+    -pedidos: List<Pedido>
+
+    +realizarCadastro();
+    +consultarPedidos();
+}
+
+abstract Class Agente extends Usuario
+{
+    -CNPJ: String
+    -nome: String
+    -endereco: String
+    -contratos: List<Contrato>
+    
+    +realizarCadastro();
+    +consultarPedidos();
+}
+
+Class Empresa extends Agente
+{
+    -CNPJ: String
+    -nome: String
+    -endereco: String
+    -contratos: List<Contrato>
+
+    +realizarCadastro();
+}
+
+Class Banco extends Agente
+{
+    -CNPJ: String
+    -nome: String
+    -endereco: String
+    -contratos: List<Contrato>
+
+    +realizarCadastro();
+    +concederCredito()
+}
+
+class Pedido 
+{
+    -id: String
+    -status: StatusPedido
+    -data: Date
+    -cliente: Cliente
+    -contrato: Contrato
+    
+    +adicionarPedido()
+    +alterarStatus()
+    +modificarPedido()
+    +cancelarPedido()
+    +avaliarPedido()
+}
+
+Enum StatusPedido {
+    -ANALISE
+    -APROVADO
+    -CANCELADO
+}
+
+Class Contrato 
+{
+    -id: String
+    -cliente: Cliente
+    -agente: Agente
+    -automovel: Automovel
+    +executarContrato()
+}
+
+Class Automovel
+{
+    -matricula: String
+    -placa: String
+    -marca: String
+    -modelo: String
+    -ano: Date
+    +cadastrarAutomovel()
+}
+
+Cliente "1" -- "0..N" Pedido
+Pedido "1" -- "0..1" Contrato
+Contrato "1..N" -- "1" Agente
+Contrato "1" -- "1..N" Automovel
+
+@enduml
