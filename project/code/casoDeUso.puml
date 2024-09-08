@@ -1,0 +1,22 @@
+@startuml
+"Usuario" as U
+"Cliente" as C
+"Agente" as A
+"Banco" as B
+A <|-- B
+U  <|-- C
+U  <|-- A
+
+U --> (Realizar cadastro)
+A --> (Avaliar pedidos de aluguel)
+C --> (Buscar Carros)
+C --> (Consultar alugueis introduzidos)
+B -->(Conceder contrato de crédito)
+(Consultar alugueis introduzidos)<. (Cancelar pedido de aluguel ): ‹<extends>>
+(Introduzir Aluguel) .> (Buscar Carros) : <<extends>>
+(Consultar alugueis introduzidos)<-- (Modificar pedido de aluguel): ‹<extends>>
+
+
+( Modificar pedido de aluguel) .>(Avaliar pedidos de aluguel):<<extends>>
+(Gerar Contrato) .>(Avaliar pedidos de aluguel)
+@enduml
