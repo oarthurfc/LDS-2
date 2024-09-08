@@ -1,0 +1,27 @@
+@startuml diagramaDePacotes
+package "Usuarios" {
+    class Usuario <<Public>>
+    class Cliente <<Public>>
+    class Agente <<Public>>
+    class Empresa <<Public>>
+    class Banco <<Public>>
+}
+
+package "Pedidos" {
+    class Pedido <<Public>>
+    enum StatusPedido <<Public>>
+}
+
+package "Contratos" {
+    class Contrato <<Public>>
+}
+
+package "Veiculos" {
+    class Automovel <<Public>>
+}
+
+Usuarios <.. Pedidos
+Pedidos <.. Contratos
+Contratos <.. Veiculos
+Contratos <.. Usuarios
+@enduml
