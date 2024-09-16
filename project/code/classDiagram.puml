@@ -1,15 +1,15 @@
 @startuml
-abstract Class Usuario {
-    -nome: String
-    -endereco: String
-    -pedidos: List<Pedido>
+abstract Class Proprietario {
   
-    +realizarCadastro();
+
     +consultarPedidos();
 }
 
-Class Cliente extends Usuario
-{
+Class Cliente extends Proprietario
+{   
+    -nome: String
+    -endereco: String
+    -pedidos: List<Pedido>
     -cpf: String
     -rg: String
     -profissao: String
@@ -21,11 +21,12 @@ Class Cliente extends Usuario
     +consultarPedidos();
 }
 
-abstract Class Agente extends Usuario
+abstract Class Agente extends Proprietario
 {
     -CNPJ: String
     -nome: String
     -endereco: String
+    -pedidos: List<Pedido>
     -contratos: List<Contrato>
     
     +realizarCadastro();
@@ -33,7 +34,8 @@ abstract Class Agente extends Usuario
 }
 
 Class Empresa extends Agente
-{
+{   
+    -pedidos: List<Pedido>
     -CNPJ: String
     -nome: String
     -endereco: String
@@ -43,7 +45,8 @@ Class Empresa extends Agente
 }
 
 Class Banco extends Agente
-{
+{   
+    -pedidos: List<Pedido>
     -CNPJ: String
     -nome: String
     -endereco: String
@@ -79,18 +82,28 @@ Class Contrato
     -id: String
     -cliente: Cliente
     -agente: Agente
+    -tipoDeContrato: TipoDeContrato
+    -optouPelaCompra: boolean
     -automovel: Automovel
     +executarContrato()
 }
 
 Class Automovel
-{
+{   
+    -proprietario: Proprietario
     -matricula: String
     -placa: String
     -marca: String
     -modelo: String
     -ano: Date
     +cadastrarAutomovel()
+}
+
+Enum TempoDeContrato {
+    -12
+    -24
+    -36
+    -48
 }
 
 Cliente "1" -- "0..N" Pedido
