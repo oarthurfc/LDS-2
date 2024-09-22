@@ -1,10 +1,10 @@
-package com.pucminas.LDS_2;
+package com.lds.implementacao;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Lds2ApplicationTests {
+class ImplementacaoApplicationTests {
 
 	@Test
 	void contextLoads() {

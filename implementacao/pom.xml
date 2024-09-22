@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.3</version>
+		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.pucminas</groupId>
-	<artifactId>LDS-2</artifactId>
+	<groupId>com.lds</groupId>
+	<artifactId>implementacao</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>LDS-2</name>
-	<description>Sistema de aluguel de carros</description>
+	<name>implementacao</name>
+	<description>Sistema de Aluguel de carros</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -40,12 +40,6 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-			<scope>runtime</scope>
-			<optional>true</optional>
-		</dependency>
-		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
@@ -60,6 +54,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
