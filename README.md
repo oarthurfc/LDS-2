@@ -5,7 +5,7 @@ Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
 * Arthur Ferreira Costa
 * Felipe Freitas Campos Picinin
 * Gabriel Faria
-* Pedro Braga
+* Pedro Franco
 
 ## Orientadores
 * Cristiano de Macêdo Neto
@@ -22,3 +22,7 @@ Assim que a primeira versão do sistema estiver disponível, deverá complementa
 * Eu como Agente quero avaliar pedidos de aluguel para que eu possa aceitar ou nao o pedido de aluguel de carros.
 * Eu como Agente quero modificar pedidos de aluguel para que eu possa fazer uma contraproposta ao pedido de aluguel de carros.
 * Eu como Banco quero concender contrato de Crédito para que o cliente possa financiar o pedido de aluguel de carros.
+
+### Link swagger
+ - Para utilizar o swagger, basta dar run no projeto e acessar o link.
+[Swagger](http://localhost:8080/swagger-ui/index.html#/)
