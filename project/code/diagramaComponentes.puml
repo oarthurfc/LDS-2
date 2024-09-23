@@ -1,0 +1,30 @@
+@startuml
+skinparam componentStyle rectangle
+
+package "Servidor Central" {
+    [Subsistema de Gestão de Pedidos]
+    [Subsistema de Gestão de Contratos]
+    [Componente de Avaliação Financeira]
+}
+
+package "Banco de Dados" {
+    [Dados de Clientes]
+    [Dados de Agentes]
+    [Dados de Automóveis]
+    [Dados de Contratos de Crédito]
+}
+
+[Cliente] ..> [Subsistema de Gestão de Pedidos]
+[Agente (Empresas/Bancos)] ..> [Subsistema de Gestão de Pedidos]
+[Agente (Empresas/Bancos)] ..> [Subsistema de Gestão de Contratos]
+[Cliente] ..> [Subsistema de Gestão de Contratos]
+
+[Subsistema de Gestão de Pedidos] ..> [Componente de Avaliação Financeira]
+[Componente de Avaliação Financeira] ..> [Agente (Empresas/Bancos)]
+
+[Subsistema de Gestão de Pedidos] ..> [Dados de Clientes]
+[Subsistema de Gestão de Contratos] ..> [Dados de Automóveis]
+[Subsistema de Gestão de Contratos] ..> [Dados de Contratos de Crédito]
+[Subsistema de Gestão de Contratos] ..> [Dados de Clientes]
+[Subsistema de Gestão de Contratos] ..> [Dados de Agentes]
+@enduml
