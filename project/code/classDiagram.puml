@@ -15,7 +15,6 @@ Class Cliente extends Proprietario
     -profissao: String
     -empregadores: Lista<String>
     -salarioTotal: Double
-    -pedidos: List<Pedido>
 
     +realizarCadastro();
     +consultarPedidos();
@@ -82,10 +81,16 @@ Class Contrato
     -id: String
     -cliente: Cliente
     -agente: Agente
-    -tipoDeContrato: TipoDeContrato
+    -tempoDeContrato: TempoDeContrato
     -optouPelaCompra: boolean
     -automovel: Automovel
     +executarContrato()
+}
+
+Enum StatusPedido {
+    -ANALISE
+    -APROVADO
+    -CANCELADO
 }
 
 Class Automovel
