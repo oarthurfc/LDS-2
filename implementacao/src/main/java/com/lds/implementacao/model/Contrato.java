@@ -1,10 +1,7 @@
 package com.lds.implementacao.model;
 
-import java.util.Date;
+import com.lds.implementacao.enums.TempoDeContrato;
 
-import com.lds.implementacao.enums.StatusPedido;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -19,29 +16,31 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
-public class Pedido {
+public class Contrato {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Enumerated(EnumType.STRING)
-    StatusPedido status;
-
-    Date data;
-
-    @ManyToOne 
-    @JoinColumn(name = "cliente_id")
-    private Cliente cliente;
-
-    @OneToOne(cascade = CascadeType.ALL, optional = true)
-    Contrato contrato;
+    @OneToOne
+    @JoinColumn(name = "pedido_id", referencedColumnName = "id")
+    Pedido pedido;
 
     @ManyToOne
-    @JoinColumn(name = "agente_id")  
+    @JoinColumn(name = "agente_id")
     Agente agente;
+    
+    @Enumerated(EnumType.STRING)
+    TempoDeContrato tempoDeContrato;
+
+    Boolean optouPelaCompra;
+
+    @ManyToOne
+    @JoinColumn(name = "automovel_id")
+    Automovel automovel;
 }

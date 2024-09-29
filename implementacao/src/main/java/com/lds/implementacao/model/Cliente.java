@@ -3,6 +3,7 @@ package com.lds.implementacao.model;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,7 +19,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Cliente {
+public class Cliente extends Proprietario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
@@ -31,6 +32,8 @@ public class Cliente {
     String cpf;
     String rg;
     String profissao;
+    
+    @ElementCollection
     List<String> empregadores;
     Double salarioTotal;
 }
