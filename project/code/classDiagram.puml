@@ -79,7 +79,7 @@ Enum StatusPedido {
 Class Contrato 
 {
     -id: String
-    -cliente: Cliente
+    -pedido: Pedido
     -agente: Agente
     -tempoDeContrato: TempoDeContrato
     -optouPelaCompra: boolean
