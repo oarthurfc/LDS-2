@@ -16,14 +16,17 @@ Além disso, o sistema visa facilitar a interação entre as partes envolvidas, 
 Abaixo está um guia geral de como configurar e utilizar a aplicação:
 
 Instalação de Dependências
+
 Instale o Node.js: A aplicação pode requerer Node.js, então, baixe e instale a versão mais recente do Node.js através do site oficial (Node.js).
 
 Clone o repositório: Baixe o código do projeto para o seu ambiente local usando Git:
 
 git clone <URL_DO_REPOSITÓRIO>
+
 Acesse a pasta do projeto:
 
 cd <PASTA_DO_PROJETO>
+
 Instale as dependências: Se o projeto utiliza o gerenciador de pacotes npm ou yarn, execute um dos seguintes comandos para instalar todas as bibliotecas necessárias:
 
 npm install
@@ -31,6 +34,7 @@ ou
 
 yarn install
 Execução da Aplicação
+
 Configuração de variáveis de ambiente: Se houver variáveis de ambiente (ex.: conexão com o banco de dados), crie um arquivo .env na raiz do projeto e defina as chaves necessárias, como:
 
 DB_HOST=localhost
@@ -43,7 +47,9 @@ npm start
 Acesse a aplicação: Com o servidor rodando, você poderá acessar o sistema pelo navegador, geralmente no endereço:
 
 http://localhost:8080
+
 Testando APIs com Postman
+
 Importação das rotas: Para testar as APIs, o arquivo com as rotas da aplicação poderá ser importado diretamente no Postman. Utilize o botão de "Importar" no Postman e carregue o arquivo postman_collection.json que será fornecido junto ao projeto.
 
 Realizar requisições: Após a importação, você poderá testar todas as funcionalidades da API, como criar, modificar, consultar ou cancelar pedidos de aluguel, utilizando as rotas configuradas no Postman.
